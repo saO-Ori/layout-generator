@@ -1,4 +1,4 @@
-# Layout-Generator
+# Layout Generator
 
 ## 概要
 **Flexbox** または **CSS Grid** のレイアウトを生成できるツールです。
