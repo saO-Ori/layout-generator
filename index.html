@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Layout Generator</title>
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/flex-style.css" />
+	<link rel="stylesheet" href="./css/grid-style.css">
+</head>
+
+<body>
+	<div class="body-wrapper">
+
+		<!-- 左：コード出力 -->
+		<div class="code-wrapper">
+			<h2 class="subtitle">HTMLコード</h2>
+			<div class="code-panel">
+				<div class="html-container">
+					<pre id="htmlOutput"><code></code></pre>
+				</div>
+				<button id="htmlCopy" class="html-button">COPY</button>
+			</div>
+
+			<h2 class="subtitle">CSSコード</h2>
+			<div class="code-panel">
+				<div class="css-container">
+					<pre id="cssOutput"><code></code></pre>
+				</div>
+				<button id="cssCopy" class="css-button">COPY</button>
+			</div>
+		</div>
+
+		<!-- 中央：プレビュー -->
+		<div id="previewArea" class="preview-area">
+			<h1 class="title">Layout Generator</h1>
+			<div id="layoutContainer" class="flex-container">
+				<!-- gridモード時のみ gridFrame をJSで追加 -->
+				<!-- JSで子要素を動的に追加 -->
+			</div>
+		</div>
+
+		<!-- 右：タブ + コントロール + リセット -->
+		<div class="right-side">
+			<div class="tab-switcher">
+				<button id="tabFlex" class="tab-button active">Flex</button>
+				<button id="tabGrid" class="tab-button">Grid</button>
+			</div>
+
+			<div id="flexControls" class="control-panel">
+				<!-- flexの設定UI -->
+				<h2>設定</h2>
+
+				<!-- 子要素の数 -->
+				<div class="count-input-group">
+				<label for="itemCount">子要素の数</label>
+				<input type="number" id="itemCount" min="2" max="10" value="2" />
+				</div>
+
+				<!-- Flex設定 -->
+				<div class="button-group">
+					<p>方向（flex-direction）</p>
+					<button data-prop="flex-direction" data-value="row">row</button>
+					<button data-prop="flex-direction" data-value="column">column</button>
+					<button data-prop="flex-direction" data-value="row-reverse">row-reverse</button>
+					<button data-prop="flex-direction" data-value="column-reverse">column-reverse</button>
+				</div>
+
+				<div class="gap-input-group">
+					<label for="flexGap">GAP</label>
+					<input type="text" id="flexGap" min="0"/>
+					<p>&nbsp; px &ensp;</p>
+				</div>
+
+				<div class="button-group">
+					<p>主軸方向（justify-content）</p>
+					<button data-prop="justify-content" data-value="flex-start">flex-start</button>
+					<button data-prop="justify-content" data-value="center">center</button>
+					<button data-prop="justify-content" data-value="flex-end">flex-end</button>
+					<button data-prop="justify-content" data-value="space-between">space-between</button>
+					<button data-prop="justify-content" data-value="space-around">space-around</button>
+					<button data-prop="justify-content" data-value="space-evenly">space-evenly</button>
+				</div>
+
+				<div class="button-group">
+					<p>交差軸（align-items）</p>
+					<button data-prop="align-items" data-value="flex-start">flex-start</button>
+					<button data-prop="align-items" data-value="center">center</button>
+					<button data-prop="align-items" data-value="flex-end">flex-end</button>
+					<button data-prop="align-items" data-value="stretch">stretch</button>
+				</div>
+
+				<div class="button-group">
+					<p>折り返し（flex-wrap）</p>
+					<button data-prop="flex-wrap" data-value="nowrap">nowrap</button>
+					<button data-prop="flex-wrap" data-value="wrap">wrap</button>
+					<button data-prop="flex-wrap" data-value="wrap-reverse">wrap-reverse</button>
+				</div>
+				<button class="reset-button">RESET</button>
+			</div>
+
+			<div id="gridControls" class="control-panel hidden">
+				<!-- gridの設定UI -->
+				<h2>設定</h2>
+				<div class="control-wrapper">
+					<!-- column数 -->
+					<div class="input-group">
+						<label for="columnCount">COL</label>
+						<select id="columnCount" inputmode="numeric">
+							<!-- JSでoptionを2〜10まで追加 -->
+						</select>
+					</div>
+
+					<!-- row数 -->
+					<div class="input-group">
+						<label for="rowCount">ROW</label>
+						<select id="rowCount" inputmode="numeric">
+							<option value="-">-</option>
+							<!-- JSで2〜10を追加 -->
+						</select>
+					</div>
+
+					<!-- gap設定 -->
+					<div class="input-group">
+						<label for="gap">GAP</label>
+						<input type="text" id="rowGap" min="0" placeholder="Row" />
+						<p>&nbsp; px &ensp;</p>
+						<input type="text" id="colGap" min="0" placeholder="Col" />
+						<p>&nbsp; px</p>
+					</div>
+
+					<!-- span指定 -->
+					<div class="input-group">
+						<label for="span">
+							SPAN
+						</label>
+						<p id="spanWarning" class="inline-warning"></p>
+						<div id="gridSpan">
+							<div class="span-inner">
+								<!-- spanのinputをJSで追加 -->
+							</div>
+						</div>
+					</div>
+					<button id="ResetBtn" class="reset-button">RESET</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
