@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* 中央：プレビューエリア */
+.preview-area {
+  padding: 1.5rem;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid-container {
+  width: 100%;
+  height: 100%;
+  /* JSで動的にプロパティを変更 */
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+#gridFrame {
+  display: grid;
+}
+
+/* 右：操作パネル */
+#gridControls select {
+  padding: 0.4rem 0.6rem;
+}
+
+#gridControls input[type="text"] {
+  padding: 0.4rem 0.6rem;
+  width: 64px;
+}
+
+#gridSpan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, auto));
+  justify-content: start;
+  gap: 5px;
+  width: 100%;
+}
+
+.span-set {
+  width: 78px;
+  background: var(--bg-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.span-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#span input[type="number"] {
+  width: 60px;
+  padding: 0.25rem 0.4rem;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 警告表示スタイル */
+.inline-warning {
+  color: var(--warning-color);
+  font-size: 0.8em;
+  font-weight: normal;
+  display: block;
+  /* 常にDOMに残す */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.inline-warning.visible {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.input-group label {
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group select {
+  width: 60px;
+  padding: 0.25rem 0.4rem;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group input[type="text"]:last-child,
+.input-group input[type="number"]:last-child {
+  margin-right: 0;
+}
