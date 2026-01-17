@@ -1,4 +1,4 @@
-# Layout Generator
+# Layout Visualizer
 
 ## 概要
 **Flexbox** または **CSS Grid** のレイアウトを生成できるツールです。
@@ -47,6 +47,6 @@
 
 ## 作者情報
 - 名前: sari
-- GitHub: [Layout-Generator](https://sao-ori.github.io/layout-generator/)
+- GitHub: [Layout-Visualizer](https://sao-ori.github.io/layout-generator/)
 
 ---
