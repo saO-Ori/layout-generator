@@ -47,6 +47,6 @@
 
 ## 作者情報
 - 名前: sari
-- GitHub: [Layout-Visualizer](https://sao-ori.github.io/layout-generator/)
+- GitHub: [Layout-Visualizer](https://sao-ori.github.io/layout-visualizer/)
 
 ---
